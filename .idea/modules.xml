@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/POO-SPRINT-4.iml" filepath="$PROJECT_DIR$/POO-SPRINT-4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/motiva-api.iml" filepath="$PROJECT_DIR$/motiva-api.iml" />
     </modules>
   </component>
 </project>
