@@ -1,4 +1,4 @@
-<img width="1373" height="337" alt="Captura de tela 2026-10-25 004859" src="https://github.com/user-attachments/assets/f53e8c0f-ea5d-438c-9690-11518e041e7e" /># MOTIVA - Sprint 4: API REST com Spring Boot + JPA
+ MOTIVA - Sprint 4: API REST com Spring Boot + JPA
 
 API REST profissional para o sistema MOTIVA, migrado de JDBC puro (Sprint 3) para Spring Boot + Spring Data JPA.
 
@@ -251,6 +251,7 @@ O SQL do `findByTipo()` não está escrito em nenhum lugar do código fonte. O S
 <img width="1378" height="430" alt="Captura de tela 2026-10-25 005049" src="https://github.com/user-attachments/assets/448b57ed-11b5-4823-a9ee-04e82fd06a61" />
 <img width="1607" height="533" alt="Captura de tela 2026-10-25 005104" src="https://github.com/user-attachments/assets/f2d12faa-efa9-4fd9-8072-3fc48c918650" />
 <img width="1610" height="578" alt="Captura de tela 2026-10-25 005110" src="https://github.com/user-attachments/assets/a8dfaf1a-26d8-4d6f-8d58-8687d36c7550" />
+
 
 
 ## Tecnologias Utilizadas
