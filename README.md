@@ -1,18 +1,19 @@
-# MOTIVA - Sprint 4: API REST com Spring Boot + JPA
+<img width="1373" height="337" alt="Captura de tela 2026-10-25 004859" src="https://github.com/user-attachments/assets/f53e8c0f-ea5d-438c-9690-11518e041e7e" /># MOTIVA - Sprint 4: API REST com Spring Boot + JPA
 
 API REST profissional para o sistema MOTIVA, migrado de JDBC puro (Sprint 3) para Spring Boot + Spring Data JPA.
 
 ## Índice
 
-| Item | Link |
-|---|---|
-| Visão geral | [Acessar seção](#visão-geral) |
-| Arquitetura | [Acessar seção](#arquitetura) |
-| Pré-requisitos | [Acessar seção](#pré-requisitos) |
-| Como rodar | [Acessar seção](#como-rodar) |
-| Endpoints da API | [Acessar seção](#endpoints-da-api) |
-| Exemplos cURL | [Acessar seção](#exemplos-curl) |
-| Perguntas de reflexão | [Acessar seção](#perguntas-de-reflexão) |
+| Item | Link                                           |
+|---|------------------------------------------------|
+| Visão geral | [Acessar seção](#visão-geral)                  |
+| Arquitetura | [Acessar seção](#arquitetura)                  |
+| Pré-requisitos | [Acessar seção](#pré-requisitos)               |
+| Como rodar | [Acessar seção](#como-rodar)                   |
+| Endpoints da API | [Acessar seção](#endpoints-da-api)             |
+| Exemplos cURL | [Acessar seção](#exemplos-curl)                |
+| Perguntas de reflexão | [Acessar seção](#perguntas-de-reflexão)        |
+| Prints do Projeto executando | [Acessar seção](#Prints-do-Projeto-executando) |
 
 ## Visão geral
 
@@ -56,7 +57,7 @@ src/main/java/br/com/motiva/
     └── RelatorioPrioridadeController.java
 ```
 
-**Camadas:** Controller → Service → Repository → Banco Oracle
+**Camadas:** Controller → Service → Repository → Banco Oracle FIAP
 
 ## Pré-requisitos
 
@@ -236,10 +237,27 @@ A validação deve ficar no Service porque é uma regra de negócio, e o Control
 
 O SQL do `findByTipo()` não está escrito em nenhum lugar do código fonte. O Spring Data JPA gera o SQL automaticamente em tempo de execução com base no nome do método. Quando declaramos `List<TrechoRodovia> findByTipoTerreno(String tipoTerreno);`, o Spring interpreta o padrão "findBy" + nome do atributo e gera uma query JPQL/HQL equivalente a algo como `SELECT t FROM TrechoRodovia t WHERE t.tipoTerreno = :tipoTerreno`. Essa JPQL é então traduzida para SQL nativo do Oracle pelo Hibernate. Podemos ver o SQL gerado ativando `spring.jpa.show-sql=true` no `application.properties`. O desenvolvedor não escreve SQL manual — apenas segue as convenções de nomenclatura do Spring Data.
 
+## Prints do Projeto executando
+
+<img width="1373" height="337" alt="Captura de tela 2026-10-25 004859" src="https://github.com/user-attachments/assets/2958d116-0d3a-46ab-95aa-933aa3b0d8ee" />
+<img width="1371" height="330" alt="Captura de tela 2026-10-25 004912" src="https://github.com/user-attachments/assets/768bc9f1-42aa-49c8-8fc1-aaaa592c3e9d" />
+<img width="1380" height="451" alt="Captura de tela 2026-10-25 004923" src="https://github.com/user-attachments/assets/d2c89012-5c0a-4aca-ba69-4a93153471bb" />
+<img width="1378" height="437" alt="Captura de tela 2026-10-25 004934" src="https://github.com/user-attachments/assets/e87cd9d8-de60-424b-bef7-021f322eb378" />
+<img width="1376" height="405" alt="Captura de tela 2026-10-25 004946" src="https://github.com/user-attachments/assets/2a6fb764-e81f-48bd-b97b-d959ad62da38" />
+<img width="1377" height="397" alt="Captura de tela 2026-10-25 004955" src="https://github.com/user-attachments/assets/0866914e-1b59-4375-be59-663cd4ec9f2d" />
+<img width="1377" height="432" alt="Captura de tela 2026-10-25 005005" src="https://github.com/user-attachments/assets/37d7003c-29b3-4dde-92f5-ed9e20770839" />
+<img width="1387" height="425" alt="Captura de tela 2026-10-25 005015" src="https://github.com/user-attachments/assets/7038daad-9135-46f3-9366-4abe13e659de" />
+<img width="1378" height="442" alt="Captura de tela 2026-10-25 005040" src="https://github.com/user-attachments/assets/db747b3e-9b4e-40c5-95ec-345f605a6435" />
+<img width="1378" height="430" alt="Captura de tela 2026-10-25 005049" src="https://github.com/user-attachments/assets/448b57ed-11b5-4823-a9ee-04e82fd06a61" />
+<img width="1607" height="533" alt="Captura de tela 2026-10-25 005104" src="https://github.com/user-attachments/assets/f2d12faa-efa9-4fd9-8072-3fc48c918650" />
+<img width="1610" height="578" alt="Captura de tela 2026-10-25 005110" src="https://github.com/user-attachments/assets/a8dfaf1a-26d8-4d6f-8d58-8687d36c7550" />
+
+
 ## Tecnologias Utilizadas
 
 - Spring Boot 3.2.0
 - Spring Data JPA
 - Oracle JDBC Driver (ojdbc17)
+- Oracle Database FIAP
 - Maven
 - Java 17
