@@ -98,7 +98,11 @@ class TrechoRodoviaControllerTest {
 
     @Test
     void criar_QuandoKmNegativo_DeveRetornar400() throws Exception {
-        TrechoRodovia trechoInvalido = new TrechoRodovia(-10, 75.0, "UMIDO", 1);
+        TrechoRodovia trechoInvalido = new TrechoRodovia();
+        trechoInvalido.setKm(-10);
+        trechoInvalido.setAlturaVegetacao(75.0);
+        trechoInvalido.setTipoTerreno("UMIDO");
+        trechoInvalido.setEquipeId(1);
         when(trechoService.criar(any(TrechoRodovia.class)))
             .thenThrow(new IllegalArgumentException("km não pode ser negativo"));
 

@@ -1,5 +1,6 @@
 package br.com.motiva.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
@@ -11,7 +12,7 @@ public class TrechoRodovia {
     @Column(name = "KM")
     private Integer km;
 
-    @Column(name = "ALTURA_VEGETACAO", nullable = false, precision = 8, scale = 2)
+    @Column(name = "ALTURA_VEGETACAO", nullable = false)
     private Double alturaVegetacao;
 
     @NotNull(message = "tipoTerreno não pode ser nulo")
@@ -23,6 +24,7 @@ public class TrechoRodovia {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "EQUIPE_ID", insertable = false, updatable = false)
+    @JsonIgnore
     private EquipeManutencao equipe;
 
     public TrechoRodovia() {

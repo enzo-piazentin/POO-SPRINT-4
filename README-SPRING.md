@@ -4,15 +4,16 @@ API REST profissional para o sistema MOTIVA, migrado de JDBC puro (Sprint 3) par
 
 ## Índice
 
-| Item | Link |
-|---|---|
-| Visão geral | [Acessar seção](#visão-geral) |
-| Arquitetura | [Acessar seção](#arquitetura) |
-| Pré-requisitos | [Acessar seção](#pré-requisitos) |
-| Como rodar | [Acessar seção](#como-rodar) |
-| Endpoints da API | [Acessar seção](#endpoints-da-api) |
-| Exemplos cURL | [Acessar seção](#exemplos-curl) |
-| Perguntas de reflexão | [Acessar seção](#perguntas-de-reflexão) |
+| Item | Link                                           |
+|---|------------------------------------------------|
+| Visão geral | [Acessar seção](#visão-geral)                  |
+| Arquitetura | [Acessar seção](#arquitetura)                  |
+| Pré-requisitos | [Acessar seção](#pré-requisitos)               |
+| Como rodar | [Acessar seção](#como-rodar)                   |
+| Endpoints da API | [Acessar seção](#endpoints-da-api)             |
+| Exemplos cURL | [Acessar seção](#exemplos-curl)                |
+| Perguntas de reflexão | [Acessar seção](#perguntas-de-reflexão)        |
+| Prints do Projeto executando | [Acessar seção](#Prints-do-Projeto-executando) |
 
 ## Visão geral
 
@@ -56,7 +57,7 @@ src/main/java/br/com/motiva/
     └── RelatorioPrioridadeController.java
 ```
 
-**Camadas:** Controller → Service → Repository → Banco Oracle
+**Camadas:** Controller → Service → Repository → Banco Oracle FIAP
 
 ## Pré-requisitos
 
@@ -236,10 +237,13 @@ A validação deve ficar no Service porque é uma regra de negócio, e o Control
 
 O SQL do `findByTipo()` não está escrito em nenhum lugar do código fonte. O Spring Data JPA gera o SQL automaticamente em tempo de execução com base no nome do método. Quando declaramos `List<TrechoRodovia> findByTipoTerreno(String tipoTerreno);`, o Spring interpreta o padrão "findBy" + nome do atributo e gera uma query JPQL/HQL equivalente a algo como `SELECT t FROM TrechoRodovia t WHERE t.tipoTerreno = :tipoTerreno`. Essa JPQL é então traduzida para SQL nativo do Oracle pelo Hibernate. Podemos ver o SQL gerado ativando `spring.jpa.show-sql=true` no `application.properties`. O desenvolvedor não escreve SQL manual — apenas segue as convenções de nomenclatura do Spring Data.
 
+## Prints do Projeto executando
+
 ## Tecnologias Utilizadas
 
 - Spring Boot 3.2.0
 - Spring Data JPA
 - Oracle JDBC Driver (ojdbc17)
+- Oracle Database FIAP
 - Maven
 - Java 17

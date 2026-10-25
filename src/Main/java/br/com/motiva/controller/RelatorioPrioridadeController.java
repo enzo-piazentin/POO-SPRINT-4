@@ -32,8 +32,11 @@ public class RelatorioPrioridadeController {
 
     @GetMapping("/periodo")
     public ResponseEntity<List<RelatorioPrioridade>> buscarPorPeriodo(
-            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime inicio,
-            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime fim) {
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime inicio,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime fim) {
+        if (inicio == null || fim == null) {
+            return ResponseEntity.badRequest().build();
+        }
         List<RelatorioPrioridade> relatorios = relatorioService.buscarPorPeriodo(inicio, fim);
         return ResponseEntity.ok(relatorios);
     }
