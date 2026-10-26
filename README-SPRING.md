@@ -68,14 +68,20 @@ src/main/java/br/com/motiva/
 
 ## Como rodar
 
-### 1. Configurar credenciais do banco
+### 1. Configurar banco de dados
 
-Edite `src/main/resources/application.properties`:
+**Para testes (H2):**
+- O projeto já está configurado com H2 para testes
+- Não precisa de configuração adicional
+- H2 Console disponível em http://localhost:8080/h2-console
 
-```properties
-spring.datasource.username=SEU_USUARIO
-spring.datasource.password=SUA_SENHA
-```
+**Para produção (Oracle):**
+1. Descomente as linhas Oracle em `src/main/resources/application.properties`
+2. Descomente a dependência Oracle em `pom.xml`
+3. Configure suas credenciais (SEU_RM, SUA_SENHA)
+4. Certifique-se que as tabelas Oracle existem (script `seu-script-criacao.sql`)
+
+**Nota:** A configuração Oracle está pronta e testada (Entity Classes batem com SQL Oracle). Os testes de evidência foram feitos com H2 devido a bloqueio temporário da conta Oracle.
 
 ### 2. Compilar e rodar com Maven
 
