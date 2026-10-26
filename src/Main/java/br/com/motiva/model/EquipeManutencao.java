@@ -8,8 +8,7 @@ import jakarta.validation.constraints.NotBlank;
 public class EquipeManutencao {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "equipe_seq")
-    @SequenceGenerator(name = "equipe_seq", sequenceName = "EQUIPE_MANUTENCAO_SEQ", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @NotBlank(message = "nome da equipe é obrigatório")
