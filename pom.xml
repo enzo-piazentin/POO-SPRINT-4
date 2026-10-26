@@ -35,12 +35,22 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
-        <!-- H2 Database (temporary for testing) -->
+        <!-- H2 Database (for testing) -->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
         </dependency>
+
+        <!-- Oracle JDBC Driver (uncomment to use Oracle instead of H2)
+        <dependency>
+            <groupId>com.oracle.database.jdbc</groupId>
+            <artifactId>ojdbc17</artifactId>
+            <version>21.9.0.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/ojdbc17.jar</systemPath>
+        </dependency>
+        -->
 
         <!-- Validation -->
         <dependency>
